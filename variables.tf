@@ -266,5 +266,5 @@ variable "force_new_deployment" {
 
 variable "additional_containers" {
   type = list(string)
-  default = ()
+  default = []
 }
