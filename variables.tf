@@ -264,3 +264,7 @@ variable "force_new_deployment" {
   default     = false
 }
 
+variable "additional_containers" {
+  type = list(string)
+  default = ()
+}

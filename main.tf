@@ -197,7 +197,10 @@ resource "aws_ecs_task_definition" "task" {
   "mountPoints": ${jsonencode(var.task_mount_points)},
   %{~endif}
   "environment": ${jsonencode(local.task_environment)}
-}]
+}%{for entry in var.additional_containers~}
+,${entry}
+%{~endfor}
+]
 EOF
 
   dynamic "placement_constraints" {
